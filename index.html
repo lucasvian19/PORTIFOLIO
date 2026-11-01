@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucas Viana | Editor de Vídeos Profissional</title>
+<meta name="description" content="Lucas Viana, editor de vídeos profissional. Edição de vídeos curtos, longos, motion graphics e muito mais.">
+<style>
+:root{--bg:#fff;--fg:#0a0a0b;--mut:#6c6c72;--card:#f5f5f6;--line:#e2e2e5;--ink:#0a0a0b;--onink:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 50% at 80% 10%,#e9e9ec 0,transparent 70%),radial-gradient(50% 40% at 10% 60%,#f0f0f2 0,transparent 70%),#fff}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit}
+.wrap{max-width:1000px;margin:auto;padding:0 20px}
+section{padding:90px 0}
+h2{font-size:clamp(34px,6vw,56px);letter-spacing:-.03em;margin:0 0 10px;text-align:center;line-height:1.1}
+.sub{color:var(--mut);text-align:center;margin:0 auto 40px;max-width:560px}
+.eyebrow{display:block;text-align:center;color:var(--mut);font-size:14px;margin-bottom:10px}
+nav{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:14px;padding:8px 10px 8px 18px;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.08);max-width:calc(100% - 24px)}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:-.02em;white-space:nowrap}
+.logo b{display:grid;place-items:center;width:26px;height:26px;background:var(--ink);color:var(--onink);border-radius:7px;font-size:11px}
+.links{display:flex;gap:2px;background:var(--card);padding:5px;border-radius:12px}
+.links a{padding:7px 13px;border-radius:9px;font-size:14px;color:var(--mut)}
+.links a.on,.links a:hover{color:var(--fg);background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid transparent}
+.pill.dark{background:var(--ink);color:var(--onink)}
+.pill.ghost{background:#fff;border-color:var(--line)}
+nav .pill{padding:9px 16px;font-size:14px}
+#inicio{min-height:100vh;display:flex;align-items:center;padding:120px 0 60px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--mut);padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:#fff}
+.badge i{width:8px;height:8px;border-radius:50%;background:#22c55e}
+h1{font-size:clamp(48px,11vw,104px);line-height:1;letter-spacing:-.05em;margin:24px 0 16px;font-weight:800;background:linear-gradient(90deg,#0a0a0b 20%,#9a9aa0);-webkit-background-clip:text;background-clip:text;color:transparent;min-height:1.1em}
+.cur{display:inline-block;width:2px;height:.9em;background:#8a8a90;margin-left:4px;vertical-align:-.08em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.role{font-size:clamp(20px,3vw,26px);color:var(--mut);min-height:1.5em;margin:0}
+.lead{font-style:italic;color:var(--mut);max-width:620px;margin:20px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:48px;padding-top:26px;max-width:680px}
+.stats div+div{border-left:1px solid var(--line);padding-left:28px}
+.stats b{display:block;font-size:30px;letter-spacing:-.03em}
+.stats small{color:var(--mut);font-size:13px}
+.grad{background:linear-gradient(90deg,#ec4899,#6366f1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px}
+.card small{color:var(--mut);font-size:13px}
+.card h3{font-size:26px;letter-spacing:-.02em;margin:8px 0 14px;line-height:1.2}
+.card p{color:var(--mut);font-size:15px;margin:0 0 28px}
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:10px}
+.sw div{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+.sw i{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-style:normal;font-size:12px;font-weight:700}
+.sw b{display:block;font-size:13px}.sw span{font-size:12px;color:var(--mut)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px}
+.tags span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600}
+.tags span::before{content:"✓ ";color:var(--mut)}
+.foco{border-top:1px solid var(--line);padding-top:16px}
+.foco b{font-size:14px;display:block}.foco span{font-size:13px;color:var(--mut)}
+.chips{display:flex;gap:8px;justify-content:center;margin-bottom:40px}
+.chips button{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 26px;font-size:15px;font-weight:600;color:var(--mut)}
+.chips button.on{background:var(--ink);color:var(--onink);border-color:var(--ink)}
+.car{position:relative;height:540px;display:flex;align-items:center;justify-content:center;perspective:1000px}
+.car.h{height:360px}
+.vid{position:absolute;width:300px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.12);transition:transform .5s,opacity .5s,filter .5s;display:grid;place-items:center;color:#fff;font-weight:700}
+.vid.h{width:520px;aspect-ratio:16/9;border-radius:24px}
+.vid small{position:absolute;left:18px;bottom:16px;font-size:13px}
+.play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.35);backdrop-filter:blur(6px);display:grid;place-items:center;font-size:22px}
+.arr{position:absolute;top:50%;transform:translateY(-50%);z-index:50;width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.08);font-size:18px}
+.row{display:flex;gap:16px;width:max-content;margin-bottom:16px;animation:mv 40s linear infinite}
+.row.r{animation-direction:reverse;animation-duration:50s}
+.mask{overflow:hidden}
+.tile{width:320px;height:180px;border-radius:20px;border:1px solid var(--line);flex:none;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:600}
+@keyframes mv{to{transform:translateX(-50%)}}
+.faq{max-width:620px;margin:auto}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:0;padding:20px 0;font-size:17px;font-weight:600;text-align:left}
+.q button span{transition:transform .3s;color:var(--mut)}
+.q.open button span{transform:rotate(180deg)}
+.q p{max-height:0;overflow:hidden;margin:0;color:var(--mut);font-size:15px;transition:max-height .3s,padding .3s}
+.q.open p{max-height:140px;padding-bottom:20px}
+.cts{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.ct{width:250px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 20px;text-align:center}
+.ct i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);margin:0 auto 14px;font-style:normal;font-weight:700}
+.ct small{color:var(--mut);font-size:13px}.ct b{display:block;margin:2px 0 16px}
+.ct .pill{padding:8px 16px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:50px 0}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:30px}
+footer h4{margin:0 0 12px;font-size:12px;letter-spacing:.08em;color:var(--mut);font-weight:500}
+footer a{display:block;color:var(--mut);font-size:14px;margin-bottom:8px}
+footer a:hover{color:var(--fg)}
+.fg p{color:var(--mut);font-size:13px;margin:6px 0 0}
+#legal{display:none;padding:110px 0 60px}
+#legal .wrap{max-width:680px}
+#legal h1{font-size:clamp(40px,8vw,64px);min-height:0;margin:20px 0 6px;background:none;color:var(--fg)}
+#legal h3{margin:30px 0 6px;font-size:18px}
+#legal p{color:var(--mut);font-size:15px;margin:0}
+#legal .up{font-size:12px}
+@media(max-width:760px){.links{display:none}.two{grid-template-columns:1fr}.stats div+div{border:0;padding:0}.vid{width:240px}.vid.h{width:300px}.car{height:440px}.car.h{height:260px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#inicio"><b>LV</b>Lucas Viana</a>
+  <div class="links"><a href="#inicio" class="on" data-i="n1"></a><a href="#sobre" data-i="n2"></a><a href="#portfolio" data-i="n3"></a><a href="#faq" data-i="n4"></a><a href="#contato" data-i="n5"></a></div>
+  <button class="pill dark" id="lang"></button>
+</nav>
+
+<main id="main">
+<section id="inicio"><div class="wrap">
+  <span class="badge"><i></i><span data-i="badge"></span></span>
+  <h1><span id="t1"></span><span class="cur" id="c1"></span></h1>
+  <p class="role"><span id="t2"></span></p>
+  <p class="lead" data-i="lead"></p>
+  <div class="btns"><a class="pill dark" href="#portfolio" data-i="b1"></a><a class="pill ghost" href="#contato" data-i="b2"></a></div>
+  <div class="stats">
+    <div><b>+100</b><small data-i="s1"></small></div>
+    <div><b class="grad">+2M</b><small data-i="s2"></small></div>
+    <div><b style="font-size:20px;padding-top:6px">Gaming Editor</b><small data-i="s3"></small></div>
+  </div>
+</div></section>
+
+<section id="sobre"><div class="wrap">
+  <span class="eyebrow" data-i="ab_e"></span>
+  <h2 data-i="ab_h"></h2>
+  <p class="sub" data-i="ab_s"></p>
+  <div class="two">
+    <div class="card">
+      <small data-i="c1_s"></small>
+      <h3 data-i="c1_h"></h3>
+      <p data-i="c1_p"></p>
+      <small data-i="c1_sw"></small>
+      <div class="sw">
+        <div><i style="background:#334">D</i><span><b>DaVinci Resolve</b><em data-i="sw1" style="font-style:normal"></em></span></div>
+        <div><i style="background:#8a2be2">Fu</i><span><b>Fusion &amp; AE</b><em data-i="sw2" style="font-style:normal"></em></span></div>
+        <div><i style="background:#0a4a8a">Ps</i><span><b>Photoshop</b><em data-i="sw3" style="font-style:normal"></em></span></div>
+      </div>
+    </div>
+    <div class="card">
+      <small data-i="c2_s"></small>
+      <h3 data-i="c2_h"></h3>
+      <div class="tags" id="tags"></div>
+      <div class="foco"><b data-i="f1"></b><span data-i="f2"></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="portfolio"><div class="wrap">
+  <h2 style="margin-bottom:40px" data-i="sh_h"></h2>
+  <div class="chips"><button id="mv" class="on"></button><button id="mh"></button></div>
+  <div class="car" id="car"><button class="arr" style="left:0" id="pv">‹</button><button class="arr" style="right:0" id="nx">›</button></div>
+</div>
+<div style="margin-top:90px">
+  <h2 data-i="mo_h"></h2>
+  <p class="sub" data-i="mo_s"></p>
+  <div class="mask" id="mo"></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2 style="margin-bottom:40px" data-i="fq_h"></h2>
+  <div class="faq" id="faq-l"></div>
+</div></section>
+
+<section id="contato"><div class="wrap">
+  <h2 data-i="ct_h"></h2>
+  <p class="sub" data-i="ct_s"></p>
+  <div class="cts">
+    <div class="ct"><i>W</i><small>WhatsApp</small><b>+55 (11) 93243-3680</b><button class="pill ghost" id="cp"></button> <a class="pill ghost" href="https://wa.me/5511932433680" target="_blank" rel="noopener">↗</a></div>
+    <div class="ct"><i>X</i><small>X / Twitter</small><b>@lucasvian19</b><a class="pill dark" href="https://x.com/lucasvian19" target="_blank" rel="noopener"><span data-i="ct_x"></span> ↗</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap fg">
+  <div><b style="font-size:18px">Lucas Viana</b><p data-i="copy"></p></div>
+  <div><h4 data-i="fn_h"></h4><a href="#inicio" data-i="n1"></a><a href="#portfolio" data-i="n3"></a><a href="#faq" data-i="n4"></a><a href="#contato" data-i="n5"></a></div>
+  <div><h4 data-i="fs_h"></h4><a href="https://x.com/lucasvian19" target="_blank" rel="noopener">X (Twitter)</a><a href="https://instagram.com/lucasvianaa_03" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@lucasvian19" target="_blank" rel="noopener">YouTube</a></div>
+  <div><h4 data-i="fl_h"></h4><a href="#privacidade" data-i="l1"></a><a href="#termos" data-i="l2"></a></div>
+</div></footer>
+</main>
+
+<div id="legal"><div class="wrap">
+  <a href="#inicio" style="color:var(--mut);font-size:13px" data-i="back"></a>
+  <div id="lg"></div>
+</div></div>
+
+<script>
+// ===== TEXTOS EDITÁVEIS (pt e en) =====
+var T={pt:{
+n1:"Início",n2:"Sobre",n3:"Portfólio",n4:"FAQ",n5:"Contato",badge:"Disponível para novos projetos",role:"Editor de Vídeos Profissional",
+lead:"Transformando ideias brutas em vídeos de alto impacto, retenção contínua para criadores e marcas.",b1:"Ver Portfólio →",b2:"💬 Entrar em Contato",
+s1:"vídeos editados",s2:"de views geradas",s3:"especialidade",
+ab_e:"✦ Perfil & Ferramentas",ab_h:"Sobre o Editor",ab_s:"Compromisso com ritmo cirúrgico, storytelling visual e retenção de público em cada projeto.",
+c1_s:"Expertise Técnica",c1_h:"Mais de 3 anos dedicados<br>à edição de alto impacto.",c1_p:"Combinando ferramentas profissionais da indústria audiovisual com técnicas avançadas de sound design, pacing e animação gráfica para fazer seus vídeos se destacarem na timeline.",c1_sw:"Softwares",
+sw1:"Edição Principal",sw2:"VFX & Animações",sw3:"Edição de Imagem",c2_s:"O que posso fazer por você",c2_h:"Especialidades",
+tags:["Cortes de Alta Retenção","Gameplays Dinâmicas","Especialista em Vídeos Curtos de Jogos","Sound Design","Motion Graphics","Color Grading"],
+f1:"Foco Total em Retenção",f2:"Edição sem enrolação para o espectador assistir até o fim.",
+sh_h:"Portfólio",vert:"Vertical",horiz:"Horizontal",vid:"Vídeo",
+mo_h:"Motion Graphics & Animações",mo_s:"Animações fluidas em loop contínuo e efeitos visuais desenvolvidos com precisão.",anim:"Animação",
+fq_h:"Perguntas frequentes",
+faq:[["Quantas revisões estão incluídas?","São incluídas apenas 2 revisões por projeto."],["Como enviar e receber os vídeos?","O recebimento e o envio dos vídeos é feito via Google Drive, Discord ou WeTransfer."],["Fornece os arquivos do projeto?","Se o cliente solicitar, sim."],["Como funciona o processo de pagamento?","Após a conclusão da edição eu te mando prints do projeto concluído e libero o link de download somente após o pagamento. Aceito PIX para clientes brasileiros e Wise para o resto do mundo."],["Preciso fornecer algo além do vídeo bruto?","Sim, vídeos de referência e uma descrição da edição que você quer."]],
+ct_h:"Contato",ct_s:"Pronto para elevar o nível dos seus vídeos? Vamos conversar diretamente.",cp:"⧉ Copiar",cpd:"✓ Copiado",ct_x:"Acessar perfil",
+copy:"© 2026 Lucas Viana. Todos os direitos reservados.",fn_h:"NAVEGAÇÃO",fs_h:"SIGA NAS REDES",fl_h:"LEGAL",l1:"Política de privacidade",l2:"Termos de uso",back:"← Voltar ao início",
+legal:{
+privacidade:["Política de privacidade","Atualizado em janeiro de 2026","Esta política explica como Lucas Viana coleta, usa e protege suas informações quando você contrata nossos serviços de edição de vídeo.",[["Dados que coletamos","Coletamos apenas os dados necessários para o trabalho: seu contato (Discord, e-mail ou telefone), os arquivos de vídeo que você envia e as referências da edição. Não pedimos dados pessoais além do que é necessário para entregar o projeto."],["Como usamos seus dados","Usamos seus dados para executar a edição, comunicar andamentos e prazos, e processar pagamentos via PIX ou Wise. Seus vídeos são usados exclusivamente para produzir o projeto contratado."],["Cookies","O site usa cookies essenciais para lembrar seu consentimento e sua preferência de idioma. Ferramentas de análise, quando ativas, respeitam a sua escolha aceita no aviso de cookies."],["Compartilhamento e retenção","Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. Os arquivos de projeto são mantidos apenas pelo tempo necessário à entrega e ao suporte das revisões, e depois são excluídos."],["Seus direitos (LGPD)","Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018). Basta entrar em contato pelos canais abaixo."],["Contato","Dúvidas sobre esta política: lucasvian@gmail.com ou pelo WhatsApp +55 (11) 93243-3680."]]],
+termos:["Termos de uso","Atualizado em janeiro de 2026","Ao contratar uma edição com Lucas Viana, você concorda com as condições abaixo.",[["Escopo do serviço","Cada plano descreve o que está incluso: cortes, legendas, correção de cor e áudio, efeitos e prazo de entrega. Serviços fora do escopo combinado são orçados separadamente antes do início do trabalho."],["Revisões","Estão inclusas apenas 2 revisões por projeto, pedidas em um único lote ou em etapas. Mudanças que alteram o formato ou a proposta original do vídeo podem gerar custo adicional, sempre informado antes."],["Pagamento e entrega","O projeto é concluído e mostrado por prints antes da liberação. O link final é enviado após a confirmação do pagamento, via PIX (Brasil) ou Wise (internacional). O envio dos arquivos é feito por Google Drive, Discord ou WeTransfer."],["Prazos","Os prazos variam conforme a complexidade e a fila de trabalhos e são combinados no início de cada projeto. Atrasos na entrega de materiais ou aprovações prorrogam o prazo na mesma proporção."],["Propriedade e uso dos vídeos","Após o pagamento, os arquivos finais são seus. Lucas Viana pode usar trechos do trabalho no portfólio e nas redes sociais, salvo pedido expresso de sigilo feito antes da entrega."],["Contato","Dúvidas sobre estes termos: lucasvian@gmail.com ou pelo WhatsApp +55 (11) 93243-3680."]]]}
+},en:{
+n1:"Home",n2:"About",n3:"Portfolio",n4:"FAQ",n5:"Contact",badge:"Available for new projects",role:"Professional Video Editor",
+lead:"Turning raw ideas into high-impact videos, with continuous retention for creators and brands.",b1:"View Portfolio →",b2:"💬 Get in Touch",
+s1:"videos edited",s2:"views generated",s3:"specialty",
+ab_e:"✦ Profile & Tools",ab_h:"About the Editor",ab_s:"A commitment to surgical pacing, visual storytelling and audience retention in every project.",
+c1_s:"Technical Expertise",c1_h:"Over 3 years dedicated<br>to high-impact editing.",c1_p:"Combining professional audiovisual industry tools with advanced sound design, pacing and motion graphics techniques to make your videos stand out on the timeline.",c1_sw:"Software",
+sw1:"Main Editing",sw2:"VFX & Animation",sw3:"Image Editing",c2_s:"What I can do for you",c2_h:"Specialties",
+tags:["High-Retention Cuts","Dynamic Gameplays","Gaming Short-Form Specialist","Sound Design","Motion Graphics","Color Grading"],
+f1:"Total Focus on Retention",f2:"No-fluff editing so viewers watch until the end.",
+sh_h:"Portfolio",vert:"Vertical",horiz:"Horizontal",vid:"Video",
+mo_h:"Motion Graphics & Animations",mo_s:"Smooth, continuously looping animations and visual effects built with precision.",anim:"Animation",
+fq_h:"Frequently asked questions",
+faq:[["How many revisions are included?","Only 2 revisions per project are included."],["How do we send and receive videos?","Videos are sent and received via Google Drive, Discord or WeTransfer."],["Do you provide the project files?","If the client requests them, yes."],["How does the payment process work?","After the edit is finished, I send you screenshots of the completed project and release the download link only after payment. I accept PIX for Brazilian clients and Wise for the rest of the world."],["Do I need to provide anything besides the raw video?","Yes, reference videos and a description of the edit you want."]],
+ct_h:"Contact",ct_s:"Ready to take your videos to the next level? Let’s talk directly.",cp:"⧉ Copy",cpd:"✓ Copied",ct_x:"View profile",
+copy:"© 2026 Lucas Viana. All rights reserved.",fn_h:"NAVIGATION",fs_h:"FOLLOW ME",fl_h:"LEGAL",l1:"Privacy policy",l2:"Terms of use",back:"← Back to home",
+legal:{
+privacidade:["Privacy policy","Updated January 2026","This policy explains how Lucas Viana collects, uses and protects your information when you hire our video editing services.",[["Data we collect","We only collect the data needed for the work: your contact (Discord, email or phone), the video files you send and the editing references. We don’t ask for personal data beyond what is needed to deliver the project."],["How we use your data","We use your data to carry out the edit, communicate progress and deadlines, and process payments via PIX or Wise. Your videos are used exclusively to produce the contracted project."],["Cookies","The site uses essential cookies to remember your consent and language preference. Analytics tools, when active, respect the choice you made in the cookie notice."],["Sharing and retention","We never sell or share your data with third parties for marketing purposes. Project files are kept only as long as needed for delivery and revision support, and then deleted."],["Your rights (LGPD)","You may request access, correction or deletion of your data at any time, under the Brazilian General Data Protection Law (Law 13,709/2018). Just get in touch through the channels below."],["Contact","Questions about this policy: lucasvian@gmail.com or WhatsApp +55 (11) 93243-3680."]]],
+termos:["Terms of use","Updated January 2026","By hiring an edit from Lucas Viana, you agree to the conditions below.",[["Scope of service","Each plan describes what is included: cuts, subtitles, color and audio correction, effects and delivery time. Services outside the agreed scope are quoted separately before work begins."],["Revisions","Only 2 revisions per project are included, requested in a single batch or in stages. Changes that alter the format or original concept of the video may incur an extra cost, always informed beforehand."],["Payment and delivery","The project is completed and shown through screenshots before release. The final link is sent after payment is confirmed, via PIX (Brazil) or Wise (international). Files are sent via Google Drive, Discord or WeTransfer."],["Deadlines","Deadlines vary with complexity and the work queue and are agreed at the start of each project. Delays in delivering materials or approvals extend the deadline proportionally."],["Ownership and use of the videos","After payment, the final files are yours. Lucas Viana may use excerpts of the work in the portfolio and on social media, unless confidentiality is expressly requested before delivery."],["Contact","Questions about these terms: lucasvian@gmail.com or WhatsApp +55 (11) 93243-3680."]]]}
+}};
+// ===== FIM DOS TEXTOS =====
+var $=function(i){return document.getElementById(i)};
+var lang="pt";try{lang=localStorage.getItem("lang")||(navigator.language||"").toLowerCase().indexOf("pt")==0?"pt":"en";var sv=localStorage.getItem("lang");if(sv)lang=sv}catch(e){}
+function type(el,txt,sp,done){var i=0;(function s(){el.textContent=txt.slice(0,++i);if(i<txt.length)setTimeout(s,sp);else if(done)done()})()}
+var typed=false;
+function apply(){var D=T[lang];document.documentElement.lang=lang=="pt"?"pt-BR":"en";document.title="Lucas Viana | "+D.role;
+document.querySelectorAll("[data-i]").forEach(function(e){e.innerHTML=D[e.getAttribute("data-i")]});
+$("lang").textContent="🌐 "+(lang=="pt"?"EN":"PT");$("mv").textContent=D.vert;$("mh").textContent=D.horiz;$("cp").textContent=D.cp;
+$("tags").innerHTML=D.tags.map(function(t){return"<span>"+t+"</span>"}).join("");
+if(typed)$("t2").textContent=D.role;
+var f=$("faq-l");f.innerHTML="";D.faq.forEach(function(x,n){var d=document.createElement("div");d.className="q"+(n==0?" open":"");d.innerHTML="<button>"+x[0]+"<span>⌄</span></button><p>"+x[1]+"</p>";d.firstChild.onclick=function(){var o=d.classList.contains("open");document.querySelectorAll(".q").forEach(function(y){y.classList.remove("open")});if(!o)d.classList.add("open")};f.appendChild(d)});
+render();mo();route()}
+$("lang").onclick=function(){lang=lang=="pt"?"en":"pt";try{localStorage.setItem("lang",lang)}catch(e){}apply()};
+// Carrossel
+var G=["#f9a8d4,#a5b4fc","#fde68a,#fb923c","#86efac,#22d3ee","#c4b5fd,#f472b6","#fca5a5,#fcd34d","#93c5fd,#a78bfa","#a7f3d0,#60a5fa","#fdba74,#f87171"];
+var mode="v",cur=0;
+function render(){var car=$("car"),N=mode=="v"?8:4,h=mode=="h",w=window.innerWidth<760;car.className="car"+(h?" h":"");car.querySelectorAll(".vid").forEach(function(e){e.remove()});
+for(var i=0;i<N;i++){(function(i){var d=document.createElement("div");d.className="vid"+(h?" h":"");d.style.background="linear-gradient(160deg,"+G[i]+")";d.innerHTML='<div class="play">▶</div><small>'+T[lang].vid+" "+(i+1)+"</small>";var o=i-cur,a=Math.abs(o);if(a>2)o=o>0?3:-3,a=3;var step=h?(w?200:330):(w?110:200);d.style.transform="translateX("+o*step+"px) scale("+(1-a*.15)+") rotateY("+o*-18+"deg)";d.style.zIndex=10-a;d.style.opacity=a>2?0:1-a*.3;d.style.filter=a?"blur("+a*1.5+"px)":"none";d.onclick=function(){cur=i;render()};car.appendChild(d)})(i)}}
+function setMode(m){mode=m;cur=0;$("mv").className=m=="v"?"on":"";$("mh").className=m=="h"?"on":"";render()}
+$("mv").onclick=function(){setMode("v")};$("mh").onclick=function(){setMode("h")};
+$("pv").onclick=function(){var N=mode=="v"?8:4;cur=(cur-1+N)%N;render()};
+$("nx").onclick=function(){var N=mode=="v"?8:4;cur=(cur+1)%N;render()};
+window.addEventListener("resize",render);
+// Motion
+function row(r){var h="";for(var k=0;k<2;k++)for(var i=0;i<8;i++)h+='<div class="tile" style="background:linear-gradient(135deg,'+G[(i+r)%8]+')">'+T[lang].anim+" "+(i+1)+"</div>";return'<div class="row'+(r?" r":"")+'">'+h+"</div>"}
+function mo(){$("mo").innerHTML=row(0)+row(3)}
+// Contato
+$("cp").onclick=function(){try{navigator.clipboard.writeText("+55 11 93243-3680");$("cp").textContent=T[lang].cpd}catch(e){}};
+// Rotas por hash
+function route(){var h=location.hash.slice(1),L=T[lang].legal[h];
+if(L){$("main").style.display="none";$("legal").style.display="block";$("lg").innerHTML="<h1>"+L[0]+'</h1><p class="up">'+L[1]+'</p><p style="margin-top:20px;font-size:17px">'+L[2]+"</p>"+L[3].map(function(s){return"<h3>"+s[0]+"</h3><p>"+s[1]+"</p>"}).join("");window.scrollTo(0,0)}
+else{$("main").style.display="";$("legal").style.display="none";if(h){var e=$(h);if(e)e.scrollIntoView()}}}
+window.addEventListener("hashchange",route);
+// Menu ativo
+var secs=["inicio","sobre","portfolio","faq","contato"];
+window.addEventListener("scroll",function(){var a="inicio";secs.forEach(function(s){var e=$(s);if(e&&e.getBoundingClientRect().top<200)a=s});document.querySelectorAll(".links a").forEach(function(x){x.classList.toggle("on",x.getAttribute("href")=="#"+a)})});
+apply();
+type($("t1"),"Lucas Viana",90,function(){$("c1").style.display="none";typed=true;type($("t2"),T[lang].role,35)});
+</script>
+</body>
+</html>
